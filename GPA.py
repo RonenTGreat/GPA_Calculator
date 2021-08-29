@@ -1,0 +1,73 @@
+""""This program will calculate the Grade Point Average of a student in the University of Ghana."""
+
+# Will have to first get the courses the student is offering first.
+
+courses = []
+hours = []
+grades = []
+GradePoint = []
+numberOfCourses = int(input("Enter the number of courses you offers: \n"))
+
+
+
+# Created a function to get the courses the student offers
+def course_select():
+    begin = 0
+    while begin != numberOfCourses:
+        ask = input("Please enter the course you offer: \n")
+        courses.append(ask.upper())
+        begin += 1
+        print(courses)
+
+course_select()
+# Checks if the courses the student entered is correct
+
+print("There these the courses you offer? \n")
+
+
+def list_make():
+    for course in courses:
+        print(course)
+
+
+list_make()
+response = input("Y or N: \n")
+
+if response == 'Y':
+    print("Very good! Let continue then.")
+elif response == 'N':
+    print("Seems you have made a mistake with your courses, kindly re-enter your courses again: \n")
+    course_select()
+else:
+    print("Please enter Y or N.")
+
+# Entering of credit hours
+begin = 0
+while begin != numberOfCourses:
+    print("Please enter the credit hours for the following courses: ")
+    list_make()
+    time = input(">>")
+    hours.append(int(time))
+    begin += 1
+    print(hours)
+print("Very Good. Let's move on.")
+print("These are the courses and their respective credit hours.")
+for course, hour in zip(courses, hours):
+    print(course, ": ", hour)
+
+total_credit = sum(hours)
+print("Total credit hours for your courses is ", total_credit)
+
+# Entering of Grades
+print("Please enter the grades you had in the following courses respectively.")
+print(courses)
+
+begin = 0
+while begin != numberOfCourses:
+    ask_grade = input(">>")
+    grades.append(ask_grade.upper())
+    begin += 1
+    print(grades)
+
+
+# Determination of grade points based on grades(A, B, C, D,...) entered
