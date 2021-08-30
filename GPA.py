@@ -67,7 +67,41 @@ while begin != numberOfCourses:
     ask_grade = input(">>")
     grades.append(ask_grade.upper())
     begin += 1
-    print(grades)
+print(grades)
 
 
 # Determination of grade points based on grades(A, B, C, D,...) entered
+for hour, grade in zip(hours, grades):
+    if grade == "A":
+        gpt = hour * 4.0
+        GradePoint.append(gpt)
+    elif grade == "B+":
+        gpt = hour * 3.5
+        GradePoint.append(gpt)
+    elif grade == "B":
+        gpt = hour * 3.0
+        GradePoint.append(gpt)
+    elif grade == "C+":
+        gpt = hour * 2.5
+        GradePoint.append(gpt)
+    elif grade == "C":
+        gpt = hour * 2.0
+        GradePoint.append(gpt)
+    elif grade == "D+":
+        gpt = hour * 1.5
+        GradePoint.append(gpt)
+    elif grade == "D":
+        gpt = hour * 1.0
+        GradePoint.append(gpt)
+    elif grade == "E":
+        gpt = hour * 0.5
+        GradePoint.append(gpt)
+    elif grade == "F":
+        gpt = hour * 0.0
+        GradePoint.append(gpt)
+    else:
+        print("Something went wrong :(")
+
+totalGradePoint = sum(GradePoint)
+gpa = totalGradePoint / total_credit
+print("Your GPA is ", round(gpa, 20))
