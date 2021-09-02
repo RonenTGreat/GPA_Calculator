@@ -113,7 +113,7 @@ answer = input(">>")
 if answer.upper() == "Y":
     print("Course ", " ", "Credit", " ", "Grade", " ", "Grade point")
     for course, hour, grade, point in zip(courses, hours, grades, gradePoint):
-        print(course, "       ", hour, "     ", grade, "      ", point)
+        print(course, "\t\t", hour, "\t\t", grade, "\t\t", point)
 # Print total credit hours, total grade point here
 
 else:
