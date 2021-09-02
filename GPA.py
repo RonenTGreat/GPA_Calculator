@@ -5,7 +5,7 @@
 courses = []
 hours = []
 grades = []
-GradePoint = []
+gradePoint = []
 numberOfCourses = int(input("Enter the number of courses you offers: \n"))
 
 
@@ -56,7 +56,6 @@ for course, hour in zip(courses, hours):
     print(course, ": ", hour)
 
 total_credit = sum(hours)
-print("Total credit hours for your courses is ", total_credit)
 
 # Entering of Grades
 print("Please enter the grades you had in the following courses respectively.")
@@ -74,34 +73,48 @@ print(grades)
 for hour, grade in zip(hours, grades):
     if grade == "A":
         gpt = hour * 4.0
-        GradePoint.append(gpt)
+        gradePoint.append(gpt)
     elif grade == "B+":
         gpt = hour * 3.5
-        GradePoint.append(gpt)
+        gradePoint.append(gpt)
     elif grade == "B":
         gpt = hour * 3.0
-        GradePoint.append(gpt)
+        gradePoint.append(gpt)
     elif grade == "C+":
         gpt = hour * 2.5
-        GradePoint.append(gpt)
+        gradePoint.append(gpt)
     elif grade == "C":
         gpt = hour * 2.0
-        GradePoint.append(gpt)
+        gradePoint.append(gpt)
     elif grade == "D+":
         gpt = hour * 1.5
-        GradePoint.append(gpt)
+        gradePoint.append(gpt)
     elif grade == "D":
         gpt = hour * 1.0
-        GradePoint.append(gpt)
+        gradePoint.append(gpt)
     elif grade == "E":
         gpt = hour * 0.5
-        GradePoint.append(gpt)
+        gradePoint.append(gpt)
     elif grade == "F":
         gpt = hour * 0.0
-        GradePoint.append(gpt)
+        gradePoint.append(gpt)
     else:
         print("Something went wrong :(")
 
-totalGradePoint = sum(GradePoint)
+totalGradePoint = sum(gradePoint)
 gpa = totalGradePoint / total_credit
 print("Your GPA is ", round(gpa, 20))
+
+#Break down of grading
+
+print("Would like to view the break of your course? \nY=Yes N=No \n")
+answer = input(">>")
+
+if answer.upper() == "Y":
+    print("Course ", " ", "Credit", " ", "Grade", " ", "Grade point")
+    for course, hour, grade, point in zip(courses, hours, grades, gradePoint):
+        print(course, "       ", hour, "     ", grade, "      ", point)
+# Print total credit hours, total gradepoint here
+
+else:
+    print("Good bye then ;).")
