@@ -115,6 +115,7 @@ if answer.upper() == "Y":
     for course, hour, grade, point in zip(courses, hours, grades, gradePoint):
         print(course, "\t\t", hour, "\t\t", grade, "\t\t", point)
 # Print total credit hours, total grade point here
-
+    print("Total credit hours is ", total_credit, " hours.")
+    print("Total grade point is ", totalGradePoint, ".")
 else:
     print("Good bye then ;).")
