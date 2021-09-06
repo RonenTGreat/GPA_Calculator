@@ -35,8 +35,9 @@ try:
     list_make()
     response = input("Y = Yes or N = No: \n")
 
-    if response == 'Y':
+    if response.upper() == 'Y':
         print("Very good! Let continue then.")
+
         # Entering of credit hours
         begin = 0
         while begin != numberOfCourses:
@@ -110,12 +111,12 @@ try:
             for course, hour, grade, point in zip(courses, hours, grades, gradePoint):
                 print(course, "\t\t", hour, "\t\t", grade, "\t\t", point)
             # Print total credit hours, total grade point here
-            print("Total credit hours is ", total_credit, " hours.")
+            print("Total credit hours is ", total_credit, "hours.")
             print("Total grade point is ", totalGradePoint, ".")
         else:
             print("Good bye then ;).")
 
-    elif response == 'N':
+    elif response.upper() == 'N':
         print("Seems you have made a mistake with your courses, kindly re-enter your courses again: \n")
         course_select()
     else:
