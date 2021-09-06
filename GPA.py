@@ -98,8 +98,8 @@ try:
                 print("Something went wrong :(")
 
         totalGradePoint = sum(gradePoint)
-        gpa = totalGradePoint / total_credit
-        print("Your GPA is ", round(gpa, 20))
+        gpa = round(totalGradePoint / total_credit, 2)
+        print("Your GPA is ", gpa)
 
         # Break down of grading
 
@@ -113,8 +113,17 @@ try:
             # Print total credit hours, total grade point here
             print("Total credit hours is ", total_credit, "hours.")
             print("Total grade point is ", totalGradePoint, ".")
+
+            # Determining the class based on the GPA calculated
+            if gpa >= 3.60 and gpa <= 4.00:
+                print("Class: First Class")
+            elif gpa >= 3.00 and gpa <= 3.59:
+                print("Class: Second Class(Upper)")
+            # continuation addition of code to determine other classes
+
+
         else:
-            print("Good bye then ;).")
+            print("Good bye then ;)")
 
     elif response.upper() == 'N':
         print("Seems you have made a mistake with your courses, kindly re-enter your courses again: \n")
