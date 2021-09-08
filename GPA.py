@@ -10,7 +10,6 @@ gradePoint = []
 try:
     numberOfCourses = int(input("Enter the number of courses you offer: \n"))
 
-
     # Created a function to get the courses the student offers
     def course_select():
         begin = 0
@@ -67,31 +66,31 @@ try:
 
         # Determination of grade points based on grades(A, B, C, D,...) entered
         for hour, grade in zip(hours, grades):
-            if grade == "A":
+            if grade.upper() == "A":
                 gpt = hour * 4.0
                 gradePoint.append(gpt)
-            elif grade == "B+":
+            elif grade.upper() == "B+":
                 gpt = hour * 3.5
                 gradePoint.append(gpt)
-            elif grade == "B":
+            elif grade.upper() == "B":
                 gpt = hour * 3.0
                 gradePoint.append(gpt)
-            elif grade == "C+":
+            elif grade.upper() == "C+":
                 gpt = hour * 2.5
                 gradePoint.append(gpt)
-            elif grade == "C":
+            elif grade.upper() == "C":
                 gpt = hour * 2.0
                 gradePoint.append(gpt)
-            elif grade == "D+":
+            elif grade.upper() == "D+":
                 gpt = hour * 1.5
                 gradePoint.append(gpt)
-            elif grade == "D":
+            elif grade.upper() == "D":
                 gpt = hour * 1.0
                 gradePoint.append(gpt)
-            elif grade == "E":
+            elif grade.upper() == "E":
                 gpt = hour * 0.5
                 gradePoint.append(gpt)
-            elif grade == "F":
+            elif grade.upper() == "F":
                 gpt = hour * 0.0
                 gradePoint.append(gpt)
             else:
@@ -115,13 +114,20 @@ try:
             print("Total grade point is ", totalGradePoint, ".")
 
             # Determining the class based on the GPA calculated
-            if gpa >= 3.60 and gpa <= 4.00:
+            if 3.60 <= gpa <= 4.00:
                 print("Class: First Class")
-            elif gpa >= 3.00 and gpa <= 3.59:
+            elif 3.00 <= gpa <= 3.59:
                 print("Class: Second Class(Upper)")
-            # continuation addition of code to determine other classes
-
-
+            elif 2.00 <= gpa <= 2.99:
+                print("Class: Second Class(Lower)")
+            elif 1.50 <= gpa <= 1.99:
+                print("Class: Third Class")
+            elif 1.00 <= gpa <= 1.49:
+                print("Class: Pass")
+            elif 0.00 <= gpa <= 0.99:
+                print("Fail")
+            else:
+                print("Can't determine class.")
         else:
             print("Good bye then ;)")
 
@@ -134,4 +140,3 @@ try:
 
 except (ValueError, NameError):
     print("You have entered an invalid input.")
-
