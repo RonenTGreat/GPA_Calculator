@@ -101,7 +101,6 @@ try:
         print("Your GPA is ", gpa)
 
         # Break down of grading
-
         print("Would like to view the break of your course? \nY=Yes N=No \n")
         answer = input(">>")
 
