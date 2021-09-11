@@ -129,10 +129,6 @@ try:
                 print("Can't determine class.")
         else:
             print("Good bye then ;)")
-
-# Create a file store break down of GPA
-# f.open("filename.txt","w")
-
     elif response.upper() == 'N':
         print("Seems you have made a mistake with your courses, kindly re-enter your courses again: \n")
         course_select()
